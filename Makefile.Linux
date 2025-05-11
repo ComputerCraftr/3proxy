@@ -14,8 +14,8 @@ CFLAGS = -g -fPIC -O2 -fno-strict-aliasing -c -pthread -DWITHSPLICE -D_GNU_SOURC
 COUT = -o 
 LN = $(CC)
 DCFLAGS = 
-LDFLAGS = -fPIC -O2 -fno-strict-aliasing -pthread -fPIE -static-pie
-DLFLAGS = -shared
+BIN_LDFLAGS = -fPIC -O2 -fno-strict-aliasing -pthread -fPIE -static-pie -fuse-ld=lld -Wl,--eh-frame-hdr
+DLFLAGS = -fPIC -shared
 DLSUFFICS = .ld.so
 # -lpthreads may be reuqired on some platforms instead of -pthreads
 LIBSPREFIX = -l
